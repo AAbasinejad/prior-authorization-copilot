@@ -122,4 +122,4 @@ The tests cover API health, live request preview, patient-level risk preview, re
 
 ## Notes
 
-This product is for the sake of demo and utilizing it as clinical authorization engine needs proper adjustment accordingly. The scoring logic is intentionally transparent and rules-based. A production implementation would require payer policy ingestion, audit trails, document OCR, PHI controls, historical-denial calibration, and human-in-the-loop clinical review.
+This product is just for the sake of demo and utilizing it as clinical authorization engine needs proper adjustments accordingly. The scoring logic is intentionally transparent and rules-based. A production implementation would require payer policy ingestion, audit trails, document OCR, PHI controls, historical-denial calibration, and human-in-the-loop clinical review.
