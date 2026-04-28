@@ -1,7 +1,14 @@
-from app.core.database import Base, SessionLocal, engine
-from app.models.schemas import PriorAuthRequestCreate
-from app.repositories.prior_auth import PriorAuthRepository
-from app.services.workflow import build_request_payload
+from pathlib import Path
+import sys
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from prior_auth_copilot.core.database import Base, SessionLocal, engine
+from prior_auth_copilot.models.schemas import PriorAuthRequestCreate
+from prior_auth_copilot.repositories.prior_auth_repository import PriorAuthRepository
+from prior_auth_copilot.services.workflow import build_request_payload
 
 
 Base.metadata.create_all(bind=engine)

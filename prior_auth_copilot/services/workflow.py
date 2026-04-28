@@ -1,7 +1,7 @@
-from app.models.schemas import PriorAuthRequestCreate
-from app.services.extraction import extract_signals
-from app.services.rule_engine import find_missing, get_rule
-from app.services.risk_model import score_denial_risk
+from prior_auth_copilot.models.schemas import PriorAuthRequestCreate
+from prior_auth_copilot.services.extraction import extract_signals
+from prior_auth_copilot.services.rule_engine import find_missing, get_rule
+from prior_auth_copilot.services.risk_model import score_denial_risk
 
 
 def build_recommended_actions(missing_documents: list[str], risk_level: str, recommended_documents: list[str]) -> list[str]:

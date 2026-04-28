@@ -1,5 +1,5 @@
-from app.models.schemas import PatientRiskPreviewRequest, PriorAuthRequestCreate
-from app.services.workflow import build_preview_response
+from prior_auth_copilot.models.schemas import PatientRiskPreviewRequest, PriorAuthRequestCreate
+from prior_auth_copilot.services.workflow import build_preview_response
 
 
 def score_patient_prior_auth_friction(request: PatientRiskPreviewRequest) -> dict:

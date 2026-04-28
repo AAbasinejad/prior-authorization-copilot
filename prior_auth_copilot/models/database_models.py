@@ -1,7 +1,7 @@
 from datetime import datetime
 from sqlalchemy import JSON, DateTime, Float, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column
-from app.core.database import Base
+from prior_auth_copilot.core.database import Base
 
 
 class PriorAuthRequestDB(Base):

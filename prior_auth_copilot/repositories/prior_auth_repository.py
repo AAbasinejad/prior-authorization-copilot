@@ -1,6 +1,6 @@
 from sqlalchemy import func
 from sqlalchemy.orm import Session
-from app.models.db import PriorAuthRequestDB
+from prior_auth_copilot.models.database_models import PriorAuthRequestDB
 
 
 class PriorAuthRepository:

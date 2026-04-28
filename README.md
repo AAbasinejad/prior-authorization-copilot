@@ -1,4 +1,4 @@
-# Prior Auth Copilot
+# Prior Authorization Copilot
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-API-009688?logo=fastapi&logoColor=white)
@@ -8,7 +8,7 @@
 ![SQLite](https://img.shields.io/badge/SQLite-Local_DB-003B57?logo=sqlite&logoColor=white)
 ![Pytest](https://img.shields.io/badge/Pytest-Tested-0A9EDC?logo=pytest&logoColor=white)
 
-Prior Auth Copilot is a lightweight prior authorization operations app built with FastAPI and Streamlit. It turns intake details, clinical notes, attached documents, and patient context into packet-readiness checks, denial-risk estimates, patient-level friction scores, and review actions.
+Prior Authorization Copilot is a lightweight prior authorization operations app built with FastAPI and Streamlit. It turns intake details, clinical notes, attached documents, and patient context into packet-readiness checks, denial-risk estimates, patient-level friction scores, and review actions.
 
 The goal is to demonstrate the shape of a real prior-auth workflow: intake a request, extract evidence from the note, apply payer/procedure documentation rules, identify missing documents, score risk before submission, and track work through an operations queue.
 
@@ -90,7 +90,7 @@ Optional CSV columns for patient-level prediction:
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-uvicorn app.api.main:app --reload --port 8000
+uvicorn prior_auth_copilot.api.main:app --reload --port 8000
 ```
 
 Open Swagger at:
@@ -103,13 +103,13 @@ Start the dashboard in another terminal:
 
 ```bash
 source .venv/bin/activate
-streamlit run streamlit_app.py
+streamlit run app.py
 ```
 
 Optional demo data:
 
 ```bash
-python seed_demo.py
+python scripts/seed_demo_data.py
 ```
 
 ## Test
@@ -122,4 +122,4 @@ The tests cover API health, live request preview, patient-level risk preview, re
 
 ## Notes
 
-This product is just for the sake of demo and utilizing it as clinical authorization engine needs proper adjustments accordingly. The scoring logic is intentionally transparent and rules-based. A production implementation would require payer policy ingestion, audit trails, document OCR, PHI controls, historical-denial calibration, and human-in-the-loop clinical review.
+This project is a demo-grade decision-support workflow, not a production clinical authorization engine. The scoring logic is intentionally transparent and rules-based. A production implementation would require payer policy ingestion, audit trails, document OCR, PHI controls, historical-denial calibration, and human-in-the-loop clinical review.

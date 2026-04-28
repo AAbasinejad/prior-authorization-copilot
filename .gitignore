@@ -1,25 +1,12 @@
-# Compiled source #
-###################
-
-# Packages #
-############
-
-# Logs and databases #
-######################
-*.db
-*.png
-*.jpg
-.env
-
-
-# OS generated files #
-######################
 .DS_Store
-.DS_Store?
-._*
-.venv
-__pycache__
-*__pycache__/*
-*__pyc
-*.pytest_cache
-*.cfg
+.env
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.py[cod]
+*.db
+*.sqlite3
+.ipynb_checkpoints/

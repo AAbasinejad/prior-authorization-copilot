@@ -368,7 +368,7 @@ with st.sidebar:
             st.info("Backend is online, but summary metrics are temporarily unavailable.")
     else:
         st.error("FastAPI backend is offline.")
-        st.code("uvicorn app.api.main:app --reload --port 8000")
+        st.code("uvicorn prior_auth_copilot.api.main:app --reload --port 8000")
 
     if st.button("Refresh Dashboard"):
         st.rerun()

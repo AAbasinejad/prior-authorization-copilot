@@ -1,7 +1,7 @@
 from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
-from app.core.database import Base, engine, get_db
-from app.models.schemas import (
+from prior_auth_copilot.core.database import Base, engine, get_db
+from prior_auth_copilot.models.schemas import (
     HealthResponse,
     OpsSummary,
     PatientRiskPreviewRequest,
@@ -11,9 +11,9 @@ from app.models.schemas import (
     PriorAuthRequestResponse,
     SubmissionResponse,
 )
-from app.repositories.prior_auth import PriorAuthRepository
-from app.services.patient_risk import score_patient_prior_auth_friction
-from app.services.workflow import build_preview_response, build_request_payload, build_submission_packet
+from prior_auth_copilot.repositories.prior_auth_repository import PriorAuthRepository
+from prior_auth_copilot.services.patient_risk import score_patient_prior_auth_friction
+from prior_auth_copilot.services.workflow import build_preview_response, build_request_payload, build_submission_packet
 
 
 Base.metadata.create_all(bind=engine)
@@ -28,7 +28,7 @@ app = FastAPI(
 
 
 @app.get("/health", response_model=HealthResponse, tags=["System"], summary="Check API health")
-def healthcheck():
+def health_check():
     return {"status": "ok"}
 
 
